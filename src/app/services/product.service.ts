@@ -13,6 +13,6 @@ export class ProductService {
     return this.http.get<Product[]>('https://fakestoreapi.com/products');
   }
   getProducts(productId:number){
-    return this.http.get<Product[]>(`https://fakestoreapi.com/products/${productId}`);
+    return this.http.get<Product>(`https://fakestoreapi.com/products/${productId}`);
   }
 }
