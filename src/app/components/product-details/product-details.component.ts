@@ -12,6 +12,7 @@ export class ProductDetailsComponent implements OnInit {
 
   productId:any=0;
   product!:Product;
+  ratings=[1,2,3,4,5];
   constructor(private route: ActivatedRoute, private productService:ProductService) {
   }
   ngOnInit(): void {
@@ -20,7 +21,7 @@ export class ProductDetailsComponent implements OnInit {
     this.productService.getProducts(this.productId).subscribe(res=>{
       this.product = res;
     });
-    console.log(this.productId)
+    console.log(this.product)
   }
 
 }

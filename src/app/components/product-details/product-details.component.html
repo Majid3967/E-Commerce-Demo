@@ -1,1 +1,19 @@
-<pre>{{product | json}}</pre>
+<div class="container">
+   <div class="row">
+    <div class="col">
+        <div class="card">
+            <img [src]="product.image" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{product.title}}</h5>
+                <div class="ratings">
+                    <h6>Rating: </h6>
+                    <span class="fa fa-star" *ngFor="let rating of ratings" [ngClass]="{'checked':rating<product.rating.rate}"></span>
+                </div>
+                <p class="card-text">{{product.description}}</p>
+                <h6>${{product.price}}</h6>
+                <a href="#" class="btn btn-primary"><img src="assets/images/cart.png" style="height: 20px;" alt="cart"><span> Add To Cart</span></a>
+            </div>
+        </div>
+    </div>
+   </div>
+</div>

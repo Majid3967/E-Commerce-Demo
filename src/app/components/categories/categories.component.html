@@ -1,1 +1,21 @@
-<p>categories works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-3">Categories</div>
+        <div class="col-9">
+            <div *ngFor="let product of allProducts;">
+                <div class="card h-100">
+                    <img [src]="product.image" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.title}}</h5>
+                        <div class="ratings">
+                            <h6>Rating: </h6>
+                            <span class="fa fa-star" *ngFor="let rating of ratings" [ngClass]="{'checked':rating<product.rating.rate}"></span>
+                        </div>
+                        <p class="card-text">{{product.description.substring(0,200)}}...</p>
+                        <a [routerLink]="['/details',product.id]" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

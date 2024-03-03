@@ -1,0 +1,45 @@
+.container{
+    min-height: 60vh;
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 16px 8px;
+    margin: 16px;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card-img{
+    height: 240px;
+    width: 240px;
+}
+.card-img-top{
+    height: 240px;
+    max-width: 240px;
+}
+.btn-primary{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.ratings{
+    display: flex;
+    flex-direction: row;
+}
+.checked {
+    color: var(--secondary-color);
+}
+@media only screen and (max-width: 600px) {
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
+    .card{
+        flex-direction: column;
+    }
+}

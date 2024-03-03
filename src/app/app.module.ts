@@ -10,11 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './components/cart/cart.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { AboutComponent } from './components/about/about.component';
-import { DealsComponent } from './components/deals/deals.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,6 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     CartComponent,
     AuthenticationComponent,
     AboutComponent,
-    DealsComponent,
     CategoriesComponent,
     FooterComponent,
     SliderComponent,
@@ -34,7 +33,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     BrowserModule,
     NgbModule,
     HttpClientModule,  
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
