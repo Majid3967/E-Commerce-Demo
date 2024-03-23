@@ -1,1 +1,32 @@
-<p>cart works!</p>
+<div class="container mt-4">
+    <div class="feature-heading">
+        <h4>Shopping Cart</h4>
+      </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Item Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartItems; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price | currency }}</td>
+          <td><input type="number" [(ngModel)]="item.quantity" (change)="updateQuantity(item)" class="form-control" min="1"></td>
+          <td class="delete-icon"><img (click)="removeItem(item)" src="../../../assets/images/delete.svg" alt="delete"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="feature-heading">
+        <p class="text-right"><b>Total: {{ getTotal() | currency }}</b></p>
+      </div>
+    <div class="cartgories-bottom">
+        <a [routerLink]="['/home']" class="btn btn-success">Continue Shopping</a>
+      <button class="btn btn-primary">Checkout</button>
+    </div>
+  </div>

@@ -1,0 +1,31 @@
+.container{
+    min-height: 60vh;
+}
+.feature-heading{
+    background-color: var(--text-secondary-background-color);
+    h4{
+        color: var(--text-secondary-color);
+        font-size: 19px;
+        padding: 8px;
+        text-transform: uppercase;
+    }
+}
+.delete-icon{
+    text-align: center;
+}
+.text-right{
+    padding: 8px;
+}
+.cartgories-bottom{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-primary{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-success{
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--text-secondary-color);
+}
