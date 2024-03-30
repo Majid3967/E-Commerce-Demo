@@ -6,13 +6,14 @@ import { AuthenticationComponent } from './components/authentication/authenticat
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { AuthGuard } from './services/auth-guard.guard';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home',pathMatch:'full'},
   {path:'home', component:HomeComponent},
   {path:'categories',component:CategoriesComponent},
   {path:'about',component:AboutComponent},
-  {path:'cart',component:CartComponent},
+  {path:'cart',component:CartComponent,canActivate:[AuthGuard]},
   {path:'user',component:AuthenticationComponent},
   {path:'details/:productId',component:ProductDetailsComponent}
 ];

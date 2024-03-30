@@ -1,1 +1,27 @@
-<p>authentication works!</p>
+<div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card text-center">
+      <div class="card-header">
+        <h5>{{ isSignIn ? 'Sign In' : 'Register' }}</h5>
+      </div>
+      <div class="card-body">
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+            <p *ngIf="false">Please enter an email address.</p>
+            <div *ngIf="false">Email is required.</div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
+            <div *ngIf="false">Password is required.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">{{ isSignIn ? 'Sign In' : 'Sign Up' }}</button>
+        </form>
+        <button class="btn btn-link mt-2" (click)="toggleSignInUp()">
+          {{ isSignIn ? 'Create an account' : 'Already have an account? Sign in' }}
+        </button>
+      </div>
+    </div>
+  </div>
+  

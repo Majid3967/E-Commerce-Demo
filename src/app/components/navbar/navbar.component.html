@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav *ngIf="isVisible" class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="">
         E-Store
@@ -19,7 +19,8 @@
           </li>
         </ul>
         <div class="d-flex">
-          <a routerLink="user"><img src="assets/images/user.png" alt="user"></a>
+          <a *ngIf="!isSignIn" routerLink="user"><img src="assets/images/user.png" alt="user"></a>
+          <a *ngIf="isSignIn" (click)="logout()"><img style="width: 24px;" src="assets/images/logout.png" alt="logout"></a>
           <span style="width: 12px;"></span>
           <a routerLink="cart"><img src="assets/images/cart.png" alt="cart"></a>
         </div>
