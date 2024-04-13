@@ -1,3 +1,13 @@
 .container{
     min-height: 60vh;
 }
+.feature-heading{
+    margin-top: 16px;
+    background-color: var(--text-secondary-background-color);
+    h4{
+        color: var(--text-secondary-color);
+        font-size: 19px;
+        padding: 8px;
+        text-transform: uppercase;
+    }
+}

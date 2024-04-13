@@ -13,6 +13,9 @@
         </tr>
       </thead>
       <tbody>
+        <tr *ngIf="cartItems.length == 0">
+          <td colspan="4" class="no-products">No Products in Cart</td>
+        </tr>
         <tr *ngFor="let item of cartItems; let i = index">
           <td>{{ i + 1 }}</td>
           <td>{{ item.name }}</td>
@@ -27,6 +30,6 @@
       </div>
     <div class="cartgories-bottom">
         <a [routerLink]="['/home']" class="btn btn-success">Continue Shopping</a>
-      <button class="btn btn-primary">Checkout</button>
+      <button *ngIf="cartItems.length > 0" class="btn btn-primary">Checkout</button>
     </div>
   </div>

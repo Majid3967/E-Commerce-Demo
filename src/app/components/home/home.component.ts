@@ -10,12 +10,14 @@ import { Product } from '../../models/product';
 export class HomeComponent implements OnInit {
 
   allProducts:Product[] = [];
+  isLoading:boolean = true;
 
   constructor(private product: ProductService) { }
 
   async ngOnInit() {
    this.product.getAllProducts().subscribe(res=>{
       this.allProducts = res;
+      this.isLoading = false;
     });
   }
 
